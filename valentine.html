@@ -2,47 +2,150 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Be My Valentine ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>To My Beautiful Wife</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 <style>
 body {
-margin: 0;
-padding: 0;
+background-color: #fff5f7;
+font-family: 'Quicksand', sans-serif;
+color: #4a4a4a;
 display: flex;
-justify-content: center;
+flex-direction: column;
 align-items: center;
-height: 100vh;
-background-color: #ffe6e6;
-font-family: 'Comic Sans MS', Arial, sans-serif;
-text-align: center;
-color: #b30059;
+justify-content: center;
+min-height: 100vh;
+margin: 0;
+padding: 20px;
+overflow-x: hidden;
 }
+
 .container {
-max-width: 500px;
+background: white;
+padding: 40px;
+border-radius: 20px;
+box-shadow: 0 10px 30px rgba(255, 182, 193, 0.4);
+max-width: 600px;
+text-align: center;
+border: 2px solid #ffb6c1;
 }
+
 h1 {
-font-size: 3em;
-margin-bottom: 20px;
+font-family: 'Dancing Script', cursive;
+font-size: 3.5rem;
+color: #d63384;
+margin-bottom: 10px;
 }
-p {
-font-size: 1.5em;
-margin-bottom: 30px;
+
+.heart {
+color: #ff4d6d;
+font-size: 50px;
+animation: beat 1.2s infinite;
+display: inline-block;
 }
-img {
-width: 150px;
-height: 150px;
-animation: heartbeat 1s infinite;
+
+@keyframes beat {
+0% { transform: scale(1); }
+15% { transform: scale(1.25); }
+30% { transform: scale(1); }
+45% { transform: scale(1.15); }
+60% { transform: scale(1); }
 }
-@keyframes heartbeat {
-0%, 100% { transform: scale(1); }
-50% { transform: scale(1.2); }
+
+.reasons-list {
+text-align: left;
+margin: 30px 0;
+padding: 0;
+list-style: none;
+}
+
+.reasons-list li {
+margin-bottom: 15px;
+padding-left: 30px;
+position: relative;
+font-size: 1.1rem;
+line-height: 1.5;
+}
+
+.reasons-list li::before {
+content: "💖";
+position: absolute;
+left: 0;
+top: 2px;
+}
+
+.btn-container {
+margin-top: 30px;
+}
+
+button {
+background-color: #ff4d6d;
+color: white;
+border: none;
+padding: 15px 40px;
+font-size: 1.3rem;
+font-weight: bold;
+border-radius: 50px;
+cursor: pointer;
+transition: transform 0.2s, background-color 0.2s;
+box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3);
+}
+
+button:hover {
+background-color: #ff758f;
+transform: scale(1.05);
+}
+
+#success-message {
+display: none;
+margin-top: 20px;
+font-family: 'Dancing Script', cursive;
+font-size: 2rem;
+color: #d63384;
 }
 </style>
 </head>
 <body>
+
 <div class="container">
-<h1>Be My Valentine ❤️</h1>
-<p>Scan, smile, and say yes 😉</p>
-<img src="https://media.giphy.com/media/l0HlPjezGYhR8p3ja/giphy.gif" alt="Heart GIF">
+<div class="heart">❤️</div>
+<h1>To My Amazing Wife</h1>
+<p>They say a picture is worth a thousand words, but a repository is worth a lifetime of commits. Here is why I love you:</p>
+
+<ul class="reasons-list">
+<li><strong>Your Kindness:</strong> The way you care for everyone around you makes the world brighter.</li>
+<li><strong>Your Smile:</strong> It's my favorite view in the world and the best part of my day.</li>
+<li><strong>Our Partnership:</strong> There is no one else I'd rather debug life with than you.</li>
+<li><strong>Your Heart:</strong> You are the most selfless, beautiful person I've ever known.</li>
+</ul>
+
+<h2>Will you be my Valentine?</h2>
+
+<div class="btn-container">
+<button onclick="celebrate()">YES, I WILL!</button>
 </div>
+
+<div id="success-message">
+You've made me the happiest man alive! 💍🌹
+</div>
+</div>
+
+<script>
+function celebrate() {
+// Trigger Confetti
+confetti({
+particleCount: 150,
+spread: 70,
+origin: { y: 0.6 },
+colors: ['#ff4d6d', '#ff758f', '#ffb6c1', '#ffffff']
+});
+
+// Show Success Message
+document.getElementById('success-message').style.display = 'block';
+document.querySelector('.btn-container').style.display = 'none';
+}
+</script>
+
 </body>
 </html>
